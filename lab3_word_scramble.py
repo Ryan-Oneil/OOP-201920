@@ -4,7 +4,6 @@
 # date: 08-10-2019
 # purpose: Lab 3
 
-import string
 
 class WordScramble:
     def __init__(self):
