@@ -6,12 +6,11 @@
 
 my_variable = 10
 while my_variable < 20:
-        i = my_variable
-        if i < 12:
-                my_variable +=1
-                print(my_variable)
-        else:
-                my_variable = (my_variable + 20)
-                print('new')
-
+    i = my_variable
+    if i < 12:
+        my_variable +=1
+        print(my_variable)
+    else:
+        my_variable = (my_variable + 20)
+        print('new')
 
