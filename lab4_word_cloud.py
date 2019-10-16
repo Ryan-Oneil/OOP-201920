@@ -4,12 +4,14 @@
 # date: 10-10-2019
 # purpose: Lab 4
 
+
 class WordCloud:
 
     # initialises everything
     # everything gets kicked off here
     def __init__(self):
         self.my_dict = self.create_dict()
+        print (self.my_dict)
         # you might like to run the following line only
         # if there wasn't a problem creating the dictionary
         self.create_html(self.my_dict)
@@ -29,8 +31,9 @@ class WordCloud:
             <body>\
             <div style="text-align: center; vertical-align: middle; font-family: arial; color: white; background-color:black; border:1px solid black">')
 
-        # your code goes here!
-        fo.write('<span style="font-size: 10px"> HELLO </span>')
+        for word in the_dict:
+            size = the_dict[word] * 10
+            fo.write('<span style="font-size: {0}px"> {1} </span>'.format(size, word))
 
         fo.write('</div>\
             </body>\
@@ -47,7 +50,12 @@ class WordCloud:
     # returns a dictionary
     def create_dict(self):
         my_dict = {}
-        # your code goes here:
+        myfile = open('gettisburg.txt', 'r')
+
+        for line in myfile:
+            words = line.split()
+            for word in words:
+                self.add_to_dict(word, my_dict)
 
         return my_dict
 
@@ -60,6 +68,10 @@ class WordCloud:
     # returns a dictionary
     def add_to_dict(self, word, the_dict):
         # your code goes here
+        if word in the_dict:
+            the_dict[word] += 1
+        else:
+            the_dict[word] = 1
 
         return the_dict
 
