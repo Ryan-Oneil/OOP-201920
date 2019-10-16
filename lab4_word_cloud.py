@@ -57,6 +57,7 @@ class WordCloud:
             for word in words:
                 self.add_to_dict(word, my_dict)
 
+        myfile.close()
         return my_dict
 
     # helper function that is called from
