@@ -40,8 +40,7 @@ class WordScramble:
         wordlist = list(word)
         wordlist[0], wordlist[1] = wordlist[1], wordlist[0]
         wordlist[-1], wordlist[-2] = wordlist[-2], wordlist[-1]
-        wordlist = "".join(wordlist)
-        return wordlist
+        return "".join(wordlist)
 
 
 word_scrambler = WordScramble()
